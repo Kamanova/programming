@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./style.css";
+import { List } from "semantic-ui-react";
 
 class Item extends React.Component {
   render() {
@@ -11,21 +12,7 @@ class ItemsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "List of dishes",
-      items: [
-        "Борщ",
-        "Уха",
-        "Рассольник",
-        "Том ям",
-        "Грибной",
-        "Желе",
-        "Булка",
-        "Кекс",
-        "Тирамису",
-        "Цезарь",
-        "Блинчики с мясом",
-        "Сырная тарелка"
-      ]
+      title: "List of dishes"
     };
 
     this.filterList = this.filterList.bind(this);
@@ -41,14 +28,16 @@ class ItemsList extends React.Component {
 
   render() {
     return (
-      <div style={{ color: "red" }}>
+      <div>
         <h2>{this.state.title}</h2>
         <input placeholder="Поиск" onChange={this.filterList} />
-        <ul>
-          {this.state.items.map(function(item) {
-            return <Item key={item} name={item} />;
-          })}
-        </ul>
+        <List>
+          {this.props.items.map(name => (
+            <List.Item>
+              <a onClick={() => this.props.onItemClick(name)}>{name}</a>
+            </List.Item>
+          ))}
+        </List>
       </div>
     );
   }

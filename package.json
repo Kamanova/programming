@@ -14,6 +14,8 @@
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.1",
-    "react-style": "^0.5.5"
+    "react-style": "^0.5.5",
+    "semantic-ui-css": "^2.4.0",
+    "semantic-ui-react": "^0.82.5"
   }
 }

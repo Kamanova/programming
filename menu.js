@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button, Divider } from "semantic-ui-react";
 
 class Menu extends Component {
   render() {
@@ -6,27 +7,29 @@ class Menu extends Component {
 
     return (
       <div>
-        <button
-          onClick={() => {
-            onChange("soups", "soupsDescription");
-          }}
-        >
-          soups
-        </button>
-        <button
-          onClick={() => {
-            onChange("desserts", "dessertsDescription");
-          }}
-        >
-          desserts
-        </button>
-        <button
-          onClick={() => {
-            onChange("snacks", "snacksDescription");
-          }}
-        >
-          snacks
-        </button>
+        <Button.Group widths="5">
+          <Button
+            onClick={() => {
+              onChange("soups", "soupsDescription");
+            }}
+          >
+            soups
+          </Button>
+          <Button
+            onClick={() => {
+              onChange("desserts", "dessertsDescription");
+            }}
+          >
+            desserts
+          </Button>
+          <Button
+            onClick={() => {
+              onChange("snacks", "snacksDescription");
+            }}
+          >
+            snacks
+          </Button>
+        </Button.Group>
       </div>
     );
   }
